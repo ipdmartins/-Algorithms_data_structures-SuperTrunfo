@@ -25,8 +25,8 @@ public class Game {
 
     private Country c1 = null;
     private List<Country> L1 = new ArrayList<>();
-    private CircularlyLinkedList_trabalho<Country> p1 = new CircularlyLinkedList_trabalho<>();
-    private CircularlyLinkedList_trabalho<Country> p2 = new CircularlyLinkedList_trabalho<>();
+    private CircularlyLinkedList_trabalho<Country> player1 = new CircularlyLinkedList_trabalho<>();
+    private CircularlyLinkedList_trabalho<Country> player2 = new CircularlyLinkedList_trabalho<>();
 
     //Define atributos das cartas e guarda numa Lista comum.
     public void cardSeter() {
@@ -117,17 +117,17 @@ public class Game {
     public void cardDistributor() {
         Collections.shuffle(L1);
         for (int i = 0; i < L1.size(); i += 2) {
-            this.p1.addFirst(L1.get(i));
-            this.p2.addFirst(L1.get(i + 1));
+            this.player1.addFirst(L1.get(i));
+            this.player2.addFirst(L1.get(i + 1));
         }
     }
 
     public CircularlyLinkedList_trabalho<Country> getP1() {
-        return p1;
+        return player1;
     }
 
     public CircularlyLinkedList_trabalho<Country> getP2() {
-        return p2;
+        return player2;
     }
 
     public List<Country> getL1() {
